@@ -126,7 +126,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ham-PI-4Pi" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ham-PI-4Pi" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="597" width="343" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.40384203769999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -154,6 +154,9 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="fMe-gs-eM0" eventType="touchUpInside" id="zRQ-JE-Qh2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nlb-k6-sKy" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="343" height="50"/>
@@ -165,6 +168,9 @@
                                         <state key="normal" title="Womens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="fMe-gs-eM0" eventType="touchUpInside" id="CJM-zl-ZiS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-fn-ndP" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="343" height="50"/>
@@ -176,6 +182,9 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoedTapped:" destination="fMe-gs-eM0" eventType="touchUpInside" id="0yB-at-Eav"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -212,6 +221,7 @@
                         <viewLayoutGuide key="safeArea" id="l8Q-98-eBb"/>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="ham-PI-4Pi" id="E4I-V9-Kjg"/>
                         <segue destination="Z3N-Uf-Saq" kind="show" identifier="skillVCSeque" id="Keu-xq-B6U"/>
                     </connections>
                 </viewController>
@@ -228,9 +238,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="uGg-Ab-m9n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="uGg-Ab-m9n">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="S58-8P-XYj">
                                 <rect key="frame" x="16" y="40" width="343" height="71"/>
@@ -295,9 +304,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uGg-Ab-m9n" firstAttribute="top" secondItem="rNe-6T-VOw" secondAttribute="top" id="74z-zX-zua"/>
                             <constraint firstItem="grY-9t-Emx" firstAttribute="trailing" secondItem="Szc-uw-rp3" secondAttribute="trailing" constant="16" id="7wS-Zo-8zg"/>
                             <constraint firstItem="grY-9t-Emx" firstAttribute="trailing" secondItem="eEk-70-md6" secondAttribute="trailing" constant="16" id="8Ib-fl-0rx"/>
                             <constraint firstItem="S58-8P-XYj" firstAttribute="top" secondItem="grY-9t-Emx" secondAttribute="top" constant="20" id="8xe-eA-GBc"/>
+                            <constraint firstItem="uGg-Ab-m9n" firstAttribute="trailing" secondItem="grY-9t-Emx" secondAttribute="trailing" id="JUf-fO-esm"/>
+                            <constraint firstItem="uGg-Ab-m9n" firstAttribute="leading" secondItem="grY-9t-Emx" secondAttribute="leading" id="ToR-Nr-HfO"/>
+                            <constraint firstItem="uGg-Ab-m9n" firstAttribute="bottom" secondItem="grY-9t-Emx" secondAttribute="bottom" id="Tyt-7U-vmD"/>
                             <constraint firstItem="grY-9t-Emx" firstAttribute="bottom" secondItem="Szc-uw-rp3" secondAttribute="bottom" constant="20" id="W05-hQ-eMg"/>
                             <constraint firstItem="S58-8P-XYj" firstAttribute="leading" secondItem="grY-9t-Emx" secondAttribute="leading" constant="16" id="aU3-4P-gQZ"/>
                             <constraint firstItem="eEk-70-md6" firstAttribute="leading" secondItem="grY-9t-Emx" secondAttribute="leading" constant="16" id="gFm-yD-BKO"/>
